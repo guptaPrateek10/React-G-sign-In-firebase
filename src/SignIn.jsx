@@ -3,7 +3,7 @@ import { getAuth, GoogleAuthProvider } from "@firebase/auth";
 import { firebase } from "./Firebase/firebase";
 
 const SignIn = () => {
-  const SignInWithFirebase = () => {
+  const SignInWithFirebase = (google_provider) => {
     var google_provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
@@ -14,7 +14,7 @@ const SignIn = () => {
       .catch((err) => {
         console.log(err);
       });
-    return <button onClick={SignInWithFirebase}>Sign In with Google</button>;
   };
+  return <button onClick={SignInWithFirebase}>Sign In with Google</button>;
 };
 export default SignIn;
